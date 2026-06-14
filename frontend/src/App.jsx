@@ -8,7 +8,6 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white">
-      {/* Header */}
       <header className="border-b border-gray-800 px-6 py-4">
         <div className="max-w-3xl mx-auto flex items-center gap-2">
           <span className="text-2xl">🔍</span>
@@ -17,7 +16,6 @@ function App() {
         </div>
       </header>
 
-      {/* Main */}
       <main className="max-w-3xl mx-auto px-6 py-12">
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold mb-3">Detector de Maquiagem Imobiliária</h2>
@@ -29,8 +27,14 @@ function App() {
         <UploadArea setReport={setReport} setLoading={setLoading} />
 
         {loading && (
-          <div className="mt-10 text-center text-gray-400 animate-pulse">
-            Analisando imagens...
+          <div className="mt-10 flex flex-col items-center gap-4">
+            <div className="flex gap-2">
+              <div className="w-3 h-3 bg-blue-500 rounded-full animate-bounce" style={{animationDelay: '0ms'}}></div>
+              <div className="w-3 h-3 bg-blue-500 rounded-full animate-bounce" style={{animationDelay: '150ms'}}></div>
+              <div className="w-3 h-3 bg-blue-500 rounded-full animate-bounce" style={{animationDelay: '300ms'}}></div>
+            </div>
+            <p className="text-gray-400 text-sm">Analisando imagens com IA...</p>
+            <p className="text-gray-600 text-xs">Isso pode levar alguns segundos</p>
           </div>
         )}
 
